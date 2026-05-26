@@ -1,69 +1,116 @@
-# AI Social Post Generator
+# 🚀 AI Social Post Generator — High-Octane Studio Workspace
+
+> **A beautifully designed, fully-integrated AI Social Post Studio.** Built with Next.js, this SaaS boilerplate provides a complete, self-contained workspace for generating, previewing, and publishing high-conversion social media copies fueled by MuAPI's `any-llm` engine.
+
+## 🌐 Try the Live Engine
+
+**Hosted Demo:** [social-post.vercel.app](https://social-post.vercel.app/)
+
+Experience the full glassmorphic, responsive interface. Sign in with Google to explore the Studio, customize dropdowns (Language, Character Length, and Tones), and preview mock social feeds directly from your browser.
+
+---
+
+AI Social Post Generator is not just another wrapper — it's a production-ready, highly-optimized AI web application. Out of the box, it seamlessly manages User Authentication, Credits & Billing, Creations Persistence, and asynchronous AI generation polling using a sleek Next.js (App Router) architecture. It empowers you to build professional-grade AI workflows with built-in mobile optimization, making it the perfect starting point for your next AI SaaS.
+
+**Why use AI Social Post Generator?**
+
+- **Production-Ready SaaS** — Complete with Google OAuth and Stripe Checkout workflows built-in.
+- **Studio Control Center** — Customize dropdowns for platform type, tone of voice, language translation, and character constraints.
+- **Dynamic Live Previews** — Tailor-made mockup cards for LinkedIn, Twitter / X, Instagram, Facebook, Reddit, and LINE.
+- **Real Publishing Intents** — Seamlessly launch composer windows pre-filled with your generated post copy with one click.
+- **Responsive UX** — Dynamic sliding dropdowns, micro-animations, and complete mobile-stacked responsiveness.
 
 ![AI Social Post Generator Dashboard UI](https://cdn.muapi.ai/data/2/549775676598/Screenshot_2026-05-26_181917.png)
 
-Generate highly engaging, optimized, and high-conversion social media posts for multiple platforms using AI. Powered by MuAPI's `any-llm` model with tailored tone structures and visual preview mockups.
+## ✨ Core Features
 
-## 🌐 Project Details
-
-**GitHub Repository:** [github.com/SamurAIGPT/social-post](https://github.com/SamurAIGPT/social-post)
-
-**Live Demo Preview:** [social-post.vercel.app](https://social-post.vercel.app/)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SamurAIGPT/social-post&env=DATABASE_URL,DIRECT_URL,NEXTAUTH_URL,NEXTAUTH_SECRET,GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,MU_API_KEY,WEBHOOK_URL,STRIPE_SECRET_KEY,NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,STRIPE_WEBHOOK_SECRET)
-
----
-
-## ✨ Features
-
-- 💼 **6 Premium Platforms** — LinkedIn, Twitter / X, Facebook, Instagram, Reddit, and LINE
-- 🎨 **5 Custom Tones** — Professional, Casual, Inspirational, Humorous, and Bold
-- ⚡ **Instant Post Generation** — AI-powered high-engagement copies generated in seconds
-- 💳 **Just 4 Credits Per Post** — Deducts only 4 credits ($0.02) per generated post
-- 📋 **One-Click Clipboard copy** — Instantly copy generated posts to your clipboard
-- 📱 **Platform-Specific Mockups** — View what your post will look like directly inside feed simulations (including X character counters)
-- 🔐 **Google Authentication** — Secure and unified sign-in using Google OAuth
-- 🛍️ **Stripe Package Purchases** — Buy one-time credit bundles securely via Stripe, no subscription required
-- 🔄 **DB Self-Healing Synchronization** — Dynamic background status updates syncing processing items automatically
+- **Kinetic Studio Panel** — Input topics in an expanding textarea, select platforms, tones, and toggle advanced settings (Include Emojis, Include Hashtags, and Include Title / Headline).
+- **Custom Dropdowns** — Sleek custom selectors featuring Chevron down/up animations, absolute overlays, and `overscroll-contain` wheel scroll-chaining preventions.
+- **Dynamic Platform Mockups** — Tailor-made preview cards reflecting genuine social feeds:
+  - **LinkedIn**: Profile headers, like counts, and professional corporate styling.
+  - **Twitter / X**: X-premium checkmark badges, sleek black themes, tweet formatting, and 280-character limit alerts.
+  - **Instagram**: Styled visual placeholder frame banner, caption layouts, and heart counts.
+  - **Reddit**: Standard dark r/socialpost community headers, author tags, upvote/downvote arrows, and markdown titles.
+  - **LINE**: Broadcasting chat bubble framework with official brand icons and chat timestamps.
+- **Publishing Intent Gateway** — Segmented choice for **Manual Copy** (to clipboard) vs. **Direct Publish** (launches mock OAuth connection stepper steps and pre-populates X/LINE/Reddit compose editors).
+- **History Archive** — A persistent gallery with complete modal detail views, copies, and updates.
+- **Credit Tiers & Billing** — Complete Stripe integration. Deduct **4 credits** ($0.02) per generated post and route users to price tier panels (Basic, Standard, Pro, Business) to buy bundles.
 
 ---
 
-## 🚀 Deploy
+## ⚡ Deployment: Vercel & Production
 
-Click the button below to deploy your own instance to Vercel in one click:
+Deploying an instance of AI Social Post Generator to the web requires minimal configuration. The architecture is engineered explicitly for **Vercel** serverless environments.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SamurAIGPT/social-post&env=DATABASE_URL,DIRECT_URL,NEXTAUTH_URL,NEXTAUTH_SECRET,GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,MU_API_KEY,WEBHOOK_URL,STRIPE_SECRET_KEY,NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,STRIPE_WEBHOOK_SECRET)
+### One-Click Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SamurAIGPT/social-post)
+
+> **Pro Tip:** Fork this repository, replace `YOUR_GITHUB_USER` in the link above, to streamline deployments for your private forks.
+
+### 🔑 Required Environment Variables
+
+To successfully deploy and run, you must populate the following environment variables in your Vercel project settings:
+
+| Service               | Variable                             | Description & Source                                                                         |
+| :-------------------- | :----------------------------------- | :------------------------------------------------------------------------------------------- |
+| **Database**          | `DATABASE_URL`                       | PostgreSQL connection string ([Supabase](https://supabase.com) shared pool with pgbouncer)  |
+|                       | `DIRECT_URL`                         | Direct DB connection for Prisma migrations and pushes                                        |
+| **NextAuth / Google** | `NEXTAUTH_SECRET`                    | Secure random string generated via `openssl rand -base64 32`                                 |
+|                       | `NEXTAUTH_URL`                       | Your production domain (e.g. `https://my-app.vercel.app`)                                    |
+|                       | `GOOGLE_CLIENT_ID`                   | Get from [Google Cloud Console](https://console.cloud.google.com/apis/credentials)           |
+|                       | `GOOGLE_CLIENT_SECRET`               | Get from [Google Cloud Console](https://console.cloud.google.com/apis/credentials)           |
+| **Stripe Billing**    | `STRIPE_SECRET_KEY`                  | Get from [Stripe Dashboard](https://dashboard.stripe.com/apikeys)                            |
+|                       | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Get from [Stripe Dashboard](https://dashboard.stripe.com/apikeys)                            |
+|                       | `STRIPE_WEBHOOK_SECRET`              | Webhook secret for resolving credit purchases                                                |
+| **AI Generator**      | `MU_API_KEY`                         | Create an account and get key from [muapi.ai/access-keys](https://muapi.ai/access-keys)      |
+|                       | `WEBHOOK_URL`                        | Callback URL for receiving slow-running generation events                                    |
+
+### 🚀 Launching on Vercel: Step-by-Step
+
+1. **Database Provisioning**: Create a new Postgres database (via completely free tiers on Vercel Postgres, Supabase, or Neon). Retrieve the pooling connection string (`DATABASE_URL`) and direct connection string (`DIRECT_URL`).
+2. **Project Creation**: Import your GitHub fork into the Vercel dashboard.
+3. **Configure Environment Variables**: Copy the variables above into the Vercel project settings environment tab.
+4. **Deploy**: Hit "Deploy". Vercel will automatically run the build steps (`npm run build`).
+5. **Database Push**: Since Prisma does not automatically migrate via Vercel builds by default, you may want to append `npx prisma db push && ` to your Vercel build command, or manually run it locally pointing to your production database URL.
+6. **Integrations Setup**:
+   - Establish a **Google Cloud OAuth app**, enabling the callback URL: `https://your-app.vercel.app/api/auth/callback/google`
+   - Setup a **Stripe Webhook**, pointing to `https://your-app.vercel.app/api/stripe/webhook` and selecting the `checkout.session.completed` event to grab your webhook signing secret.
 
 ---
 
-## ⚙️ Environment Variables
+## 🛠️ Local Development
 
-Create a `.env` file based on `.env.example` in the root directory:
+Ready to iterate locally? Setup is straightforward.
 
-```env
-# Database connection URLs (from Supabase shared pool)
-DATABASE_URL="postgresql://postgres:[password]@db.supabase.co:5432/postgres?pgbouncer=true"
-DIRECT_URL="postgresql://postgres:[password]@db.supabase.co:5432/postgres"
+### Prerequisites
 
-# NextAuth base configuration
-NEXTAUTH_URL="https://your-domain.com"
-NEXTAUTH_SECRET="use_a_secure_random_string"
+- [Node.js](https://nodejs.org/en/) (v18 or higher)
+- A local PostgreSQL instance or a free cloud Database URL.
 
-# Google Auth Client Secrets
-GOOGLE_CLIENT_ID="google_client_id_from_google_developer_console"
-GOOGLE_CLIENT_SECRET="google_client_secret_from_google_developer_console"
+### Setup
 
-# MuAPI Key configuration for AI model generation
-MU_API_KEY="your_secure_mu_api_key"
+```bash
+# 1. Clone the repository
+git clone https://github.com/SamurAIGPT/social-post
+cd social-post
 
-# Webhook configuration for slow-running prediction notifications
-WEBHOOK_URL="https://your-domain.com"
+# 2. Install dependencies
+npm install
 
-# Stripe configurations for credit purchases
-STRIPE_SECRET_KEY="stripe_secret_key"
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="stripe_publishable_key"
-STRIPE_WEBHOOK_SECRET="stripe_webhook_secret"
+# 3. Setup Environment
+cp .env.example .env
+# Open .env and insert your specific keys. You can use a local DB or your dev cloud DB.
+
+# 4. Initialize Database Schema
+npx prisma generate
+npx prisma db push
+
+# 5. Start the Development Server
+npm run dev
 ```
+
+The graphical console should now be heavily responsive on `http://localhost:3000`.
 
 ---
 
@@ -79,25 +126,44 @@ STRIPE_WEBHOOK_SECRET="stripe_webhook_secret"
 
 ---
 
-## 💻 Local Development
+## 🏗️ Technical Architecture
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-2. **Launch development server**:
-   ```bash
-   npm run dev
-   ```
-3. Open [http://localhost:3000](http://localhost:3000) inside your web browser.
+This application decouples visually rich UI elements from core business logic layers, emphasizing modularization.
+
+```
+social-post/
+├── prisma/
+│   └── schema.prisma           # Postgres tables: Users, Accounts, Creations
+├── src/
+│   ├── app/                    # Next.js 16 App Router
+│   │   ├── api/                # Backend API Routes (Stripe, MuAPI any-llm, Auth)
+│   │   │   ├── auth/           # NextAuth catch-all routes
+│   │   │   ├── billing/        # Stripe Checkout session builders and webhook listeners
+│   │   │   └── creations/      # Creations database fetch and POST polling endpoints
+│   │   ├── gallery/            # Detailed css grid completed user posts gallery
+│   │   ├── pricing/            # Interactive packaging tier checkout selection page
+│   │   ├── layout.js           # Head assets and metadata
+│   │   ├── globals.css         # Styling system theme and gradients
+│   │   └── page.js             # Main Studio generation and social preview interface
+│   ├── components/
+│   │   └── Navbar.jsx          # Collapsible responsive navigation component
+│   └── lib/
+│       ├── prisma.js           # Shared ORM client singleton
+│       ├── auth.js             # Google OAuth callback options
+│       ├── config.js           # Platform metadata and price tiers
+│       └── services/
+│           ├── user.js         # Credit adjustment database hooks
+│           ├── billing.js      # Stripe construction services
+│           └── ai.js           # MuAPI predictions submissions and fallback mocks
+├── next.config.mjs             # Next Configuration
+├── tailwind.config.js          # Project theme specs
+└── package.json
+```
+
+## 📄 License
+
+MIT Licensed.
 
 ---
 
-## 🏗️ Technical Architecture
-
-- **Core**: Next.js 16 (App Router)
-- **AI Model**: MuAPI `any-llm` (Google Gemini 2.5 Flash provider)
-- **Database**: PostgreSQL (Supabase shared pool) using Prisma ORM
-- **Auth**: NextAuth.js v4 with Google OAuth + Prisma Adapter
-- **Payments**: Stripe Checkout one-time package purchases
-- **Styling**: Tailwind CSS v4 featuring premium glassmorphism dark templates
+_AI Social Post Generator: A modular, mobile-ready, production-grade AI web application engine built for creators and builders._
