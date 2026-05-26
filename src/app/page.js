@@ -546,6 +546,25 @@ export default function WorkspacePage() {
     if (!showDirectPublishModal) return null;
 
     const platform = currentCreation?.platform || "LinkedIn";
+
+    const getPlatformDomain = () => {
+      switch (platform) {
+        case "LinkedIn":
+          return "linkedin.com";
+        case "Twitter / X":
+          return "x.com";
+        case "Facebook":
+          return "facebook.com";
+        case "Instagram":
+          return "instagram.com";
+        case "Reddit":
+          return "reddit.com";
+        case "Line":
+          return "line.me";
+        default:
+          return "x.com";
+      }
+    };
     
     // Connect Platform Icon
     const getPlatformBrandIcon = () => {
@@ -662,7 +681,7 @@ export default function WorkspacePage() {
                   <span className="text-emerald-400 font-bold">Live</span>
                 </div>
                 <div className="text-[10px] text-zinc-300 font-mono truncate select-all">
-                  https://{platform.toLowerCase().replace(/\s+/g, "")}.com/socialpost/status/987254
+                  https://{getPlatformDomain()}/socialpost/status/987254
                 </div>
               </div>
 
@@ -675,7 +694,7 @@ export default function WorkspacePage() {
                   Close Window
                 </button>
                 <a
-                  href={`https://${platform.toLowerCase().replace(/\s+/g, "")}.com`}
+                  href={`https://${getPlatformDomain()}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold rounded-lg transition-all shadow-md shadow-emerald-500/15 cursor-pointer text-center flex items-center justify-center"
