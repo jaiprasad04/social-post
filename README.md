@@ -1,6 +1,9 @@
-# 🚀 AI Social Post Generator — High-Octane Studio Workspace
+# 📱 Social Post AI — Open-Source AI Social Media Post Generator SaaS (Free Buffer AI / Jasper Social Alternative)
 
-> **A beautifully designed, fully-integrated AI Social Post Studio.** Built with Next.js, this SaaS boilerplate provides a complete, self-contained workspace for generating, previewing, and publishing high-conversion social media copies fueled by MuAPI's `any-llm` engine.
+> **Generate platform-native social media posts for LinkedIn, Twitter/X, Instagram, Facebook, Reddit, and LINE in seconds.** A production-ready, self-hostable Next.js SaaS boilerplate with live platform mockups, multi-tone generation, publish intents, and built-in Stripe billing. A free open-source alternative to Buffer AI, Jasper Social, Hootsuite OwlyWriter, Publer, and Copy.ai — powered by the MuAPI AI engine.
+
+**Tech stack:** Next.js 14 (App Router) · Prisma · PostgreSQL · NextAuth (Google OAuth) · Stripe · Tailwind CSS · MuAPI any-llm
+**Use cases:** Social media managers · Content creators · Marketing agencies · Influencers · Brand managers · Startup growth teams · E-commerce stores · Newsletter writers
 
 ## 🌐 Try the Live Engine
 
