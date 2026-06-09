@@ -37,6 +37,7 @@ const LENGTHS = [
 ];
 
 const config = {
+  appName: "Social Post",
   auth: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID,
